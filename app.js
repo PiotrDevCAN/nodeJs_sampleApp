@@ -48,6 +48,7 @@ testRule.minute = [0,10,20,30,40,50];
 
 console.log(testRule);
 
+/*
 try {
 	var km = schedule.scheduleJob(testRule, function(){
 		console.log('About to run kPES testEmail');
@@ -70,6 +71,7 @@ try {
 	// Expected output: ReferenceError: nonExistentFunction is not defined
 	// (Note: the exact output may be browser-dependent)
 }
+*/
 
 try {
 	var vm = schedule.scheduleJob(testRule, function(){
