@@ -15,7 +15,7 @@ var cfenv = require('cfenv');
 // create a new express server
 var app = express();
 app.get('/', (req, res) => {
-  res.send('CDI Scheduler App');
+	res.send('CDI Scheduler App');
 });
 
 // serve the files out of ./public as our main files
@@ -35,7 +35,7 @@ var rest_url = process.env.rest_url;
 var vbac_url = process.env.vbac_url;
 
 // start server on the specified port and binding host
-app.listen(appEnv.port, '0.0.0.0', function() {
+app.listen(appEnv.port, '0.0.0.0', function () {
 	// print a message when the server starts listening
 	console.log("server starting on " + appEnv.url);
 });
@@ -43,8 +43,8 @@ app.listen(appEnv.port, '0.0.0.0', function() {
 var schedule = require('node-schedule');
 
 var testRule = new schedule.RecurrenceRule();
-testRule.hour = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
-testRule.minute = [0,10,20,30,40,50];
+testRule.hour = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
+testRule.minute = [0, 10, 20, 30, 40, 50];
 
 console.log(testRule);
 
@@ -73,8 +73,9 @@ try {
 }
 */
 
+/*
 try {
-	var vm = schedule.scheduleJob(testRule, function(){
+	var vm = schedule.scheduleJob(testRule, function () {
 		console.log('About to run vBAC testEmail');
 		console.log(vbac_url);
 		var request = require('request');
@@ -95,9 +96,11 @@ try {
 	// Expected output: ReferenceError: nonExistentFunction is not defined
 	// (Note: the exact output may be browser-dependent)
 }
+*/
 
+/*
 try {
-	var rm = schedule.scheduleJob(testRule, function(){
+	var rm = schedule.scheduleJob(testRule, function () {
 		console.log('About to run REST testEmail');
 		console.log(rest_url);
 		var request = require('request');
@@ -118,6 +121,7 @@ try {
 	// Expected output: ReferenceError: nonExistentFunction is not defined
 	// (Note: the exact output may be browser-dependent)
 }
+*/
 
 console.log('Creating the scheduleJob entries - ARO Dev');
 
