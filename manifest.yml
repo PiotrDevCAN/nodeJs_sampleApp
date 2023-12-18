@@ -3,6 +3,6 @@ applications:
   memory: 256M
   instances: 1
   domain: w3ibm.mybluemix.net
-  name: cdiScheduler
-  host: cdiScheduler
+  name: uk-bi-app-1
+  host: uk-bi-app-1
   disk_quota: 1024M
