@@ -41,10 +41,3 @@ spec:
         - name: TEMP_INLINE_VALUE
           # we can also pass env variables like in this way 
           value: Linux
-        envFrom:
-        - configMapRef:
-            name: env-configmap
-        - secretRef:
-            name: env-secrets
-        - secretRef:
-            name: uki-bi-app-nodejs-app-docker-secrets
