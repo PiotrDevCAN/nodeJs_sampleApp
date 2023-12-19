@@ -4,10 +4,10 @@ metadata:
   labels:
     app: CDISCHED
     type: internal-apps-001
-  name: uki-bi-app-1-route-testqa
-  namespace: ns-uki-bi-app-1-gd-kps-testqa-wus3
+  name: uki-bi-app-nodejs-route-testqa
+  namespace: ns-uki-bi-app-nodejs-gd-kps-testqa-wus3
 spec:
-  host: cdi-scheduler-testqa.zkpw3uspriv.app.kyndryl.net
+  host: kpes-testqa.zkpw3uspriv.app.kyndryl.net
   port:
     targetPort: 8080
   tls:
@@ -15,4 +15,4 @@ spec:
     termination: edge
   to:
     kind: Service
-    name: uki-bi-app-1-svc
+    name: uki-bi-app-nodejs-svc

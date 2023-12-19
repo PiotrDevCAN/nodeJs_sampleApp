@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: uki-bi-app-1
+  name: uki-bi-app-nodejs
 spec:
   replicas: 1
   revisionHistoryLimit: 0 # Default to 10 if not specified
   selector:
     matchLabels:
-      app: uki-bi-app-1
+      app: uki-bi-app-nodejs
   template:
     metadata:
       labels:
-        app: uki-bi-app-1
+        app: uki-bi-app-nodejs
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -19,8 +19,8 @@ spec:
       automountServiceAccountToken: false
       dnsPolicy: ClusterFirst
       containers:
-      - name: uki-bi-app-1
-        image: kyndryl.jfrog.io/uki-business-intelligence-test-docker-local/uki-bi-app-1:latest
+      - name: uki-bi-app-nodejs
+        image: kyndryl.jfrog.io/uki-business-intelligence-test-docker-local/uki-bi-app-nodejs:latest
         resources:
           limits:
             cpu: 500m
@@ -47,6 +47,4 @@ spec:
         - secretRef:
             name: env-secrets
         - secretRef:
-            name: uki-bi-app-1-app-docker-secrets
-        - secretRef:
-            name: uki-bi-app-1-app-docker-secrets-urls
+            name: uki-bi-app-nodejs-app-docker-secrets

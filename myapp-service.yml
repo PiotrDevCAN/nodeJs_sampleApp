@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: uki-bi-app-1-svc
+  name: uki-bi-app-nodejs-svc
   labels:
-    app: uki-bi-app-1
+    app: uki-bi-app-nodejs
 spec:
   type: ClusterIP
   selector:
-    app: uki-bi-app-1
+    app: uki-bi-app-nodejs
   ports:
-  - name: uki-bi-app-1-svc-port
+  - name: uki-bi-app-nodejs-svc-port
     port: 8080
     protocol: TCP
     targetPort: 8080
