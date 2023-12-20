@@ -4,7 +4,7 @@ metadata:
   labels:
     app: CDISCHED
     type: internal-apps-001
-  name: uki-bi-app-nodejs-route
+  name: app_nodejs_poc-route
   namespace: $namespace
 spec:
   host: $hostName
@@ -15,4 +15,4 @@ spec:
     termination: edge
   to:
     kind: Service
-    name: uki-bi-app-nodejs-svc
+    name: app_nodejs_poc-svc

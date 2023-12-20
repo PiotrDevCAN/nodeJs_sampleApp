@@ -92,7 +92,7 @@ jobs:
         with:
           namespace: ${{ steps.import-secrets.outputs.NAMESPACE }}
           images: |
-            ${{ vars.JFROG_URL }}/${{ vars.JFROG_CONTAINER }}/uki-bi-app-nodejs:${{ vars.SHORT_NAME }}_${{ github.run_number }}
+            ${{ vars.JFROG_URL }}/${{ vars.JFROG_CONTAINER }}/app_nodejs_poc:${{ vars.SHORT_NAME }}_${{ github.run_number }}
           # Path to the manifest files to be used for deployment. 
           manifests: |
             ./myapp-deployment-dev.yml

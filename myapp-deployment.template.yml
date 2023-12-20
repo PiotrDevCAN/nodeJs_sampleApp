@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: uki-bi-app-nodejs
+  name: app_nodejs_poc
 spec:
   replicas: 1
   revisionHistoryLimit: 0 # Default to 10 if not specified
   selector:
     matchLabels:
-      app: uki-bi-app-nodejs
+      app: app_nodejs_poc
   template:
     metadata:
       labels:
-        app: uki-bi-app-nodejs
+        app: app_nodejs_poc
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -19,7 +19,7 @@ spec:
       automountServiceAccountToken: false
       dnsPolicy: ClusterFirst
       containers:
-      - name: uki-bi-app-nodejs
+      - name: app_nodejs_poc
         image: $imageName
         resources:
           limits:

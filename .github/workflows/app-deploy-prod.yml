@@ -39,7 +39,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: | 
-            ${{ vars.JFROG_URL }}/${{ vars.JFROG_CONTAINER }}/uki-bi-app-nodejs:${{ vars.SHORT_NAME }}_${{ github.run_number }}
+            ${{ vars.JFROG_URL }}/${{ vars.JFROG_CONTAINER }}/app_nodejs_poc:${{ vars.SHORT_NAME }}_${{ github.run_number }}
   Deploy:
     name: Deploy
     needs:
@@ -78,7 +78,7 @@ jobs:
         uses: Azure/k8s-create-secret@v4.0
         with:
           namespace: ${{ steps.import-secrets.outputs.NAMESPACE }}
-          secret-name: uki-bi-app-nodejs-app-docker-secrets
+          secret-name: app_nodejs_poc-app-docker-secrets
           container-registry-url: ${{ vars.JFROG_URL }}
           container-registry-username: ${{ steps.import-secrets.outputs.JFROG_USER }}
           container-registry-password: ${{ steps.import-secrets.outputs.JFROG_TOKEN }}      
@@ -88,7 +88,7 @@ jobs:
         # uses: Azure/k8s-create-secret@v4.0
         with:
           namespace: ${{ steps.import-secrets.outputs.NAMESPACE }}
-          secret-name: uki-bi-app-nodejs-app-docker-secrets-urls
+          secret-name: app_nodejs_poc-app-docker-secrets-urls
           secret-type: 'generic'
           arguments: --from-literal=rest_url=${{ vars.REST_URL }} --from-literal=vbac_url=${{ vars.VBAC_URL }} --from-literal=kpes_url=${{ vars.KPES_URL }}           
       - name: Deploy application
@@ -109,7 +109,7 @@ jobs:
           # that has already been setup within the cluster. 
           # Each of these secret names are added under imagePullSecrets field for the workloads found in the input manifest files
           imagepullsecrets: |
-            uki-bi-app-nodejs-app-docker-secrets
-            uki-bi-app-nodejs-app-docker-secrets-urls
+            app_nodejs_poc-app-docker-secrets
+            app_nodejs_poc-app-docker-secrets-urls
             env-configmap
             env-secrets
