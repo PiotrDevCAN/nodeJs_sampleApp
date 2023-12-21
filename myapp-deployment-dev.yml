@@ -45,3 +45,8 @@ spec:
         - name: TEMP_INLINE_VALUE
           # we can also pass env variables like in this way 
           value: Linux
+        envFrom:
+        - configMapRef:
+            name: env-configmap-dev
+        - secretRef:
+            name: app-nodejs-poc-docker-secrets

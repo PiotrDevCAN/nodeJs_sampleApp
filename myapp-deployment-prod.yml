@@ -45,10 +45,6 @@ spec:
           value: Linux
         envFrom:
         - configMapRef:
-            name: env-configmap
+            name: env-configmap-dev
         - secretRef:
-            name: env-secrets
-        - secretRef:
-            name: app-nodejs-poc-app-docker-secrets
-        - secretRef:
-            name: app-nodejs-poc-app-docker-secrets-urls
+            name: app-nodejs-poc-docker-secrets
