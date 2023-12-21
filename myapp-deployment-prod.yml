@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-nodejs-poc
+  name: app-nodejs-poc-deployment
+  labels:
+    app: app-nodejs-poc
 spec:
   replicas: 1
   revisionHistoryLimit: 0 # Default to 10 if not specified
