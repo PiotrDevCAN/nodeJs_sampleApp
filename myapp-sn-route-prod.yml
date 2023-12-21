@@ -4,8 +4,8 @@ metadata:
   labels:
     app: CDISCHED
     type: internal-apps-001
-  name: app_nodejs_poc-route-prod
-  namespace: ns-app_nodejs_poc-gd-kps-prd-wus3
+  name: app-nodejs-poc-route-prod
+  namespace: ns-app-nodejs-poc-gd-kps-prd-wus3
 spec:
   host: kpes.zkpw3uspriv.app.kyndryl.net
   port:
@@ -15,4 +15,4 @@ spec:
     termination: edge
   to:
     kind: Service
-    name: app_nodejs_poc-svc
+    name: app-nodejs-poc-svc

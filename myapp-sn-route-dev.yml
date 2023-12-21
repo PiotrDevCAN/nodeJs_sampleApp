@@ -4,7 +4,7 @@ metadata:
   labels:
     app: UKI_BI_NODEJS
     type: internal-apps-001
-  name: app_nodejs_poc-route-dev
+  name: app-nodejs-poc-route-dev
   namespace: ns-kpes-gd-kps-dev-wus3
 spec:
   host: kpes-dev.zkpw3uspriv.app.kyndryl.net
@@ -15,4 +15,4 @@ spec:
     termination: edge
   to:
     kind: Service
-    name: app_nodejs_poc-svc
+    name: app-nodejs-poc-svc

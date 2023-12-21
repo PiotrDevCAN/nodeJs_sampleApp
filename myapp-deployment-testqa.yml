@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app_nodejs_poc
+  name: app-nodejs-poc
 spec:
   replicas: 1
   revisionHistoryLimit: 0 # Default to 10 if not specified
   selector:
     matchLabels:
-      app: app_nodejs_poc
+      app: app-nodejs-poc
   template:
     metadata:
       labels:
-        app: app_nodejs_poc
+        app: app-nodejs-poc
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
@@ -19,8 +19,8 @@ spec:
       automountServiceAccountToken: false
       dnsPolicy: ClusterFirst
       containers:
-      - name: app_nodejs_poc
-        image: kyndryl.jfrog.io/uki-business-intelligence-qa-docker-local/app_nodejs_poc:latest
+      - name: app-nodejs-poc
+        image: kyndryl.jfrog.io/uki-business-intelligence-qa-docker-local/app-nodejs-poc:latest
         resources:
           limits:
             cpu: 500m
@@ -47,6 +47,6 @@ spec:
         - secretRef:
             name: env-secrets
         - secretRef:
-            name: app_nodejs_poc-app-docker-secrets
+            name: app-nodejs-poc-app-docker-secrets
         - secretRef:
-            name: app_nodejs_poc-app-docker-secrets-urls
+            name: app-nodejs-poc-app-docker-secrets-urls
