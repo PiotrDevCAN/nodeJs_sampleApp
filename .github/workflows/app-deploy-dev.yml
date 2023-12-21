@@ -106,6 +106,8 @@ jobs:
             ${{ vars.JFROG_URL }}/${{ vars.JFROG_CONTAINER }}/app-nodejs-poc:${{ vars.SHORT_NAME }}_${{ github.run_number }}
           # Path to the manifest files to be used for deployment. 
           manifests: |
+            ./env-configmap.yml
+            ./env-secrets.yml
             ./myapp-deployment-dev.yml
             ./myapp-service.yml
             ./myapp-sn-route-dev.yml
@@ -114,5 +116,5 @@ jobs:
           # Each of these secret names are added under imagePullSecrets field for the workloads found in the input manifest files
           imagepullsecrets: |
             app-nodejs-poc-docker-secrets
-            env-configmap-prod
+            env-configmap
             env-secrets

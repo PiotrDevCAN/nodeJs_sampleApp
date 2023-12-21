@@ -7,6 +7,8 @@ metadata:
 spec:
   replicas: 1
   revisionHistoryLimit: 0 # Default to 10 if not specified
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: app-nodejs-poc
