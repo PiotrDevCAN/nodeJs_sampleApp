@@ -40,7 +40,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: | 
-            ${{ vars.JFROG_URL }}/${{ vars.JFROG_CONTAINER }}/app-nodejs-poc:${{ vars.SHORT_NAME }}_${{ github.run_number }}
+            ${{ vars.JFROG_URL }}/${{ vars.JFROG_CONTAINER }}/vbac:${{ vars.SHORT_NAME }}_${{ github.run_number }}
   Deploy:
     name: Deploy
     needs:

@@ -7,7 +7,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: app-nodejs-poc-deployment
+    app: app-nodejs-poc
   ports:
   - name: app-nodejs-poc-svc-port
     port: 8080

@@ -24,7 +24,7 @@ spec:
       dnsPolicy: ClusterFirst
       containers:
       - name: app-nodejs-poc
-        image: kyndryl.jfrog.io/uki-business-intelligence-test-docker-local/app-nodejs-poc:latest
+        image: kyndryl.jfrog.io/uki-business-intelligence-test-docker-local/vbac:latest
         resources:
           limits:
             cpu: 500m
