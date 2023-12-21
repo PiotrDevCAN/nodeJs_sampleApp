@@ -2,7 +2,7 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   labels:
-    app: CDISCHED
+    app: UKI_BI_NODEJS
     type: internal-apps-001
   name: app-nodejs-poc-route-testqa
   namespace: ns-app-nodejs-poc-gd-kps-testqa-wus3
